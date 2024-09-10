@@ -63,12 +63,14 @@ def monitor_streamer(streamer_name):
         try:
             broadcaster_type = check_streamer_status(streamer_name, access_token)
             if broadcaster_type == "partner":
-                message = f"{streamer_name} is a Twitch Partner."
-                send_alexa_announcement(message)
+                message = f"{streamer_name} is a Twitch Partner. https://www.twitch.tv/{streamer_name}"
+                print(message)
+                # send_alexa_announcement(message)
                 send_telegram_message(message)
             elif broadcaster_type == "affiliate":
-                message = f"{streamer_name} is a Twitch Affiliate."
-                send_alexa_announcement(message)
+                message = f"{streamer_name} is a Twitch Affiliate. https://www.twitch.tv/{streamer_name}"
+                print(message)
+                # send_alexa_announcement(message)
                 send_telegram_message(message)
             else:
                 print(f"{streamer_name} is not an Affiliate or Partner.")
@@ -77,7 +79,7 @@ def monitor_streamer(streamer_name):
         except Exception as e:
             print(f"An error occurred: {e}")
 
-        # Wait for 10 seconds before checking again
+        print("Waiting 10 seconds...")
         time.sleep(10)
 
 
