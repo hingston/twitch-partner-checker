@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  twitch-monitor:
+    build: .
+    container_name: twitch_monitor
+    restart: always
+    environment:
+      - TWITCH_CLIENT_ID=YOUR_CLIENT_ID
+      - TWITCH_CLIENT_SECRET=YOUR_CLIENT_SECRET
+      - TELEGRAM_BOT_TOKEN=YOUR_TELEGRAM_BOT_TOKEN
+      - TELEGRAM_CHAT_ID=YOUR_CHAT_ID
+      - ALEXA_NOTIFY_ME_ACCESS_CODE=YOUR_ALEXA_NOTIFY_ME_ACCESS_CODE
+      - STREAMER_USERNAME=STREAMER_USERNAME_TO_MONITOR
