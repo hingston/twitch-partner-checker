@@ -73,7 +73,7 @@ def monitor_streamer(streamer_name):
                 # send_alexa_announcement(message)
                 send_telegram_message(message)
             else:
-                print(f"{streamer_name} is not an Affiliate or Partner.")
+                print(f"{streamer_name} is not an Affiliate or Partner. https://www.twitch.tv/{streamer_name}")
         except requests.HTTPError as e:
             print(f"HTTP Error: {e}")
         except Exception as e:
